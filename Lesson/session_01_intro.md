@@ -70,4 +70,4 @@ Học React Native có thể là một hành trình thú vị và đầy thử t
 
 7. **Đọc sách và tài liệu bổ sung**: Có nhiều sách và tài liệu bổ sung về React Native mà bạn có thể tham khảo để nâng cao kiến thức của mình.
 
-Chúc bạn thành công trong việc học React Native! Nếu bạn có bất kỳ câu hỏi nào, đừng ngần ngại hỏi thêm nhé.
+*Bài tiếp theo [Tạo ứng dụng Hello World](session_02_setup.md)*

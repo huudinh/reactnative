@@ -64,3 +64,5 @@
    ```bash
    eas build -p android --profile preview
    ```
+
+*Bài tiếp theo [Tạo ứng dụng Hello World](session_02_setup.md)*
