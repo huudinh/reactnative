@@ -71,4 +71,4 @@ export default CounterApp;
 Hy vọng những ví dụ trên sẽ giúp bạn hiểu rõ hơn về cách sử dụng `State` và `Button` trong React Native. Nếu bạn có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi thêm nhé!
 
 
-*Bài tiếp theo [Text Inputs](session_05_inputs.md)*
+*Bài tiếp theo [Sử dụng TextInput](session_05_TextInput.md)*
