@@ -1,6 +1,6 @@
 # Tạo ứng dụng Hello World
 
-Tạo dự án "Hello World" bằng TypeScript với `npx create-expo-app@latest` rất đơn giản. Dưới đây là các bước cơ bản để bạn bắt đầu:
+### Tạo dự án "Hello World"
 
 1. **Cài đặt Node.js và npm**: Đầu tiên, bạn cần cài đặt Node.js và npm (Node Package Manager). Bạn có thể tải chúng từ [trang web chính thức của Node.js](https://nodejs.org/).
 
