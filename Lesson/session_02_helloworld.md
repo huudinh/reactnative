@@ -35,10 +35,32 @@ Tạo dự án "Hello World" bằng TypeScript với `npx create-expo-app@latest
    export default App;
    ```
 
-6. **Build file APK**: Để build file APK, bạn cần sử dụng Expo's build service. Chạy lệnh sau để bắt đầu quá trình build:
-   ```bash
-   eas build --platform android
-   ```
-   Bạn sẽ cần đăng nhập vào tài khoản Expo và làm theo hướng dẫn để hoàn tất quá trình build. Sau khi build xong, bạn sẽ nhận được một liên kết để tải xuống file APK.   
+### Build file APK với Expo
 
-Chúc bạn thành công với ứng dụng Expo của mình! Nếu bạn gặp bất kỳ vấn đề nào, đừng ngần ngại hỏi thêm nhé.
+1. **Cài đặt EAS CLI**: Đảm bảo rằng bạn đã cài đặt EAS CLI. Nếu chưa, bạn có thể cài đặt bằng cách chạy lệnh sau:
+   ```bash
+   npm install -g eas-cli
+   ```
+
+2. **Đăng nhập vào tài khoản Expo**: Đăng nhập vào tài khoản Expo của bạn bằng cách chạy lệnh sau:
+   ```bash
+   eas login
+   ```
+
+3. **Cấu hình dự án**: Đảm bảo rằng bạn đã cấu hình dự án của mình để sử dụng EAS. Bạn cần tạo tệp `eas.json` trong thư mục gốc của dự án với nội dung như sau:
+   ```json
+   {
+     "build": {
+       "preview": {
+         "android": {
+           "buildType": "apk"
+         }
+       }
+     }
+   }
+   ```
+
+4. **Chạy lệnh build**: Sau khi đã cấu hình xong, bạn có thể chạy lệnh build:
+   ```bash
+   eas build -p android --profile preview
+   ```
