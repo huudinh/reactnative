@@ -35,4 +35,10 @@ Tạo dự án "Hello World" bằng TypeScript với `npx create-expo-app@latest
    export default App;
    ```
 
+6. **Build file APK**: Để build file APK, bạn cần sử dụng Expo's build service. Chạy lệnh sau để bắt đầu quá trình build:
+   ```bash
+   eas build --platform android
+   ```
+   Bạn sẽ cần đăng nhập vào tài khoản Expo và làm theo hướng dẫn để hoàn tất quá trình build. Sau khi build xong, bạn sẽ nhận được một liên kết để tải xuống file APK.   
+
 Chúc bạn thành công với ứng dụng Expo của mình! Nếu bạn gặp bất kỳ vấn đề nào, đừng ngần ngại hỏi thêm nhé.
