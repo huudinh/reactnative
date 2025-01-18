@@ -65,4 +65,4 @@
    eas build -p android --profile preview
    ```
 
-*Bài tiếp theo [Tạo ứng dụng Hello World](session_02_setup.md)*
+*Bài tiếp theo [View, Text & Styles](session_03_view.md)*
