@@ -1,55 +1,39 @@
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
 import { useState } from 'react';
 
 export default function App() {
 
-  const [count, setCount] = useState<number>(0);
-  const [name, setName] = useState<string>('...');
-  const [age, setAge] = useState<number>(20);
+  const [student, setStudent] = useState([
+    { id: 1, name: 'John 1', age: 20},
+    { id: 2, name: 'John 2', age: 20},
+    { id: 3, name: 'John 3', age: 20},
+    { id: 4, name: 'John 4', age: 20},
+    { id: 5, name: 'John 5', age: 20},
+    { id: 6, name: 'John 6', age: 20},
+    { id: 7, name: 'John 7', age: 20},
+    { id: 8, name: 'John 8', age: 20},
+    { id: 9, name: 'John 9', age: 20},
+    { id: 10, name: 'John 10', age: 20},
+  ])
 
   return (
     <View style={styles.container}>
-      <View>
         <Text>
-          Names: {name}
+          helloworld
         </Text>
-        <TextInput 
-          multiline
-          onChangeText={(value) => setName(value)}
-          style={{
-            width:200,
-            padding:10,
-            borderWidth:1,
-            borderColor:'green',
-          }}
-        />
-      </View>
-      <View>
-        <Text>
-          Age: {age}
-        </Text>
-        <TextInput 
-          onChangeText={(value) => setAge(+value)}
-          keyboardType='numeric'
-          maxLength={2}
-          style={{
-            width:200,
-            padding:10,
-            borderWidth:1,
-            borderColor:'green',
-          }}
-        />
-      </View>
-      <Text style={{ fontSize:60 }}>
-        count = {count}
-      </Text>
-      <View>
-        <Button 
-          title="Increase" 
-          color={'green'}
-          onPress={() => setCount(count + 1)} 
-        />
-      </View>
+        <ScrollView>
+          {student.map((item, index) => {
+            return (
+              <View key={item.id} style={{
+                padding: 30,
+                backgroundColor: 'pink',
+                marginBottom:30
+              }}>
+                <Text> {item.name}</Text>
+              </View>
+            )
+          })}
+        </ScrollView>
     </View>
   );
 }
@@ -58,7 +42,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });

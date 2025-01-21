@@ -71,4 +71,4 @@ export default MyComponent;
 
 Hy vọng những ví dụ trên sẽ giúp bạn hiểu rõ hơn về cách sử dụng `TextInput` trong React Native. Nếu bạn có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi thêm nhé!
 
-*Bài tiếp theo [Text Inputs](session_05_inputs.md)*
+*Bài tiếp theo [Sử dụng Array](session_06_array.md)*
