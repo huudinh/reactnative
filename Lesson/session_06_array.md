@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
 
 Hy vọng giải thích này giúp bạn hiểu rõ hơn về cách in một mảng trong React Native sử dụng `ScrollView` và lý do tại sao nên sử dụng component này! Nếu bạn có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!
 
-*Bài tiếp theo [Sử dụng Array](session_06_array.md)*
+*Bài tiếp theo [Sử dụng Flat List](session_07_FlatList.md)*

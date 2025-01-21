@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 import { useState } from 'react';
 
 export default function App() {
@@ -21,19 +21,22 @@ export default function App() {
         <Text>
           helloworld
         </Text>
-        <ScrollView>
-          {student.map((item, index) => {
+
+        <FlatList
+          data={student}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => {
             return (
-              <View key={item.id} style={{
+              <View style={{
                 padding: 30,
                 backgroundColor: 'pink',
                 marginBottom:30
               }}>
-                <Text> {item.name}</Text>
+                <Text>{item.name}</Text>
               </View>
             )
-          })}
-        </ScrollView>
+          }}
+        />
     </View>
   );
 }
