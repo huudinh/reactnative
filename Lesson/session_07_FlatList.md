@@ -59,4 +59,4 @@ const styles = StyleSheet.create({
 
 Hy vọng giải thích này giúp bạn hiểu rõ hơn về `FlatList` và sự khác biệt so với `ScrollView`! Nếu bạn có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!
 
-*Bài tiếp theo [Sử dụng Flat List](session_07_FlatList.md)*
+*Bài tiếp theo [Todo App](session_08_todo.md)*

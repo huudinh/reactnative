@@ -1,49 +1,83 @@
-import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList, TextInput } from 'react-native';
 import { useState } from 'react';
+
+interface ITodo {
+  id: number;
+  name: string
+}
 
 export default function App() {
 
-  const [student, setStudent] = useState([
-    { id: 1, name: 'John 1', age: 20},
-    { id: 2, name: 'John 2', age: 20},
-    { id: 3, name: 'John 3', age: 20},
-    { id: 4, name: 'John 4', age: 20},
-    { id: 5, name: 'John 5', age: 20},
-    { id: 6, name: 'John 6', age: 20},
-    { id: 7, name: 'John 7', age: 20},
-    { id: 8, name: 'John 8', age: 20},
-    { id: 9, name: 'John 9', age: 20},
-    { id: 10, name: 'John 10', age: 20},
-  ])
+  const [todo, setTodo ] = useState('');
+
+  const [listTodo, setListTodo] = useState<ITodo[]>([]);
+
+  function randomInterger(min:number, max:number){
+    return Math.floor(Math.random() * (max - min  +1)) + min;
+  }
+
+  const handleAddTodo = () => {
+    if(!todo) return;
+    setListTodo([...listTodo, {id:randomInterger(2, 1000000), name:todo}]);
+    setTodo('');
+  }
 
   return (
     <View style={styles.container}>
-        <Text>
-          helloworld
+        <Text style={styles.header}>
+          Todo App
         </Text>
 
-        <FlatList
-          data={student}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => {
-            return (
-              <View style={{
-                padding: 30,
-                backgroundColor: 'pink',
-                marginBottom:30
-              }}>
-                <Text>{item.name}</Text>
-              </View>
-            )
-          }}
-        />
+        <View style={styles.body}>
+          <TextInput 
+            style={styles.todoInput} 
+            onChangeText={(value) => setTodo((value))}
+            value={todo}
+          />
+          <Button title='Add todo' 
+            onPress={handleAddTodo}
+          />
+        </View>
+
+        <View style={styles.body}>
+          <FlatList
+            data = {listTodo}
+            renderItem = {(({item})=>{
+              return <Text style={styles.todoItem}>{item.name}</Text>
+            })}
+          />
+        </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  header:{
+    backgroundColor: 'orange',
+    paddingHorizontal:20,
+    textAlign: 'center',
+    fontSize:20,
+  },
   container: {
     flex: 1,
+    paddingTop:40,
     backgroundColor: '#fff',
+  },
+  todoInput: {
+    borderBottomWidth:1,
+    borderBottomColor: 'green',
+    padding: 5,
+    margin:15
+  },
+  todoItem: {
+    fontSize:20,
+    marginBottom:15,
+    borderWidth:1,
+    borderStyle: 'dashed',
+    padding:10
+  },
+  body:{
+    paddingHorizontal: 10,
+    marginBottom:20
   }
 });
