@@ -112,5 +112,4 @@
    - Định nghĩa kiểu dáng cho các thành phần khác nhau bằng cách sử dụng `StyleSheet.create`.
 
 
-
-*Bài tiếp theo [Todo App 2](session_08_todo_2.md)*
+*Bài tiếp theo [Sử dụng Pressable](session_09_Pressable.md)*

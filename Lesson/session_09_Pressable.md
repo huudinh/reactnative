@@ -1,3 +1,52 @@
+# Sử dụng Pressable
+
+Trong React Native, `Pressable` là một component được sử dụng để phát hiện các tương tác của người dùng như nhấn, giữ, và thả. Nó cung cấp một API linh hoạt để xử lý các sự kiện tương tác, cho phép bạn tạo ra các trải nghiệm người dùng phong phú và tùy chỉnh.
+
+### Ví dụ sử dụng Pressable
+
+```javascript
+import React from 'react';
+import { Pressable, Text, StyleSheet } from 'react-native';
+
+export default function App() {
+  return (
+    <Pressable
+      style={({ pressed }) => [
+        {
+          backgroundColor: pressed ? 'blue' : 'gray'
+        },
+        styles.button
+      ]}
+      onPress={() => {
+        console.log('Button Pressed!');
+      }}
+    >
+      <Text style={styles.text}>Press Me</Text>
+    </Pressable>
+  );
+}
+
+const styles = StyleSheet.create({
+  button: {
+    padding: 10,
+    borderRadius: 5,
+  },
+  text: {
+    color: 'white',
+    textAlign: 'center',
+  },
+});
+```
+
+### Giải thích:
+- `Pressable` thay đổi màu nền của nút khi được nhấn (`pressed`).
+- `onPress` là hàm xử lý sự kiện khi nút được nhấn.
+
+`Pressable` rất hữu ích khi bạn cần kiểm soát chi tiết các tương tác của người dùng và muốn tạo ra các hiệu ứng tùy chỉnh dựa trên trạng thái nhấn. Nếu bạn có bất kỳ câu hỏi nào khác, hãy cho tôi biết nhé!
+
+### Áp dụng Pressable vào bài toán todo
+
+```
 import { StyleSheet, Text, View, Button, FlatList, TextInput, Pressable } from 'react-native';
 import { useState } from 'react';
 
@@ -96,3 +145,7 @@ const styles = StyleSheet.create({
     marginBottom:20
   }
 });
+
+```
+
+*Bài tiếp theo [Sử dụng Pressable](session_09_Pressable.md)*
