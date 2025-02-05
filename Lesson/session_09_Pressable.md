@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
 
 ### Áp dụng Pressable vào bài toán todo
 
-```
+```ts
 import { StyleSheet, Text, View, Button, FlatList, TextInput, Pressable } from 'react-native';
 import { useState } from 'react';
 
