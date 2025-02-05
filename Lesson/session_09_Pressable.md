@@ -148,4 +148,4 @@ const styles = StyleSheet.create({
 
 ```
 
-*Bài tiếp theo [Sử dụng Pressable](session_09_Pressable.md)*
+*Bài tiếp theo [Feedback với Alert](session_10_Alert.md)*
