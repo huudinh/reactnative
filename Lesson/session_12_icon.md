@@ -1,3 +1,87 @@
+# Sử dụng Icon
+
+Để sử dụng Expo Vector Icons trong dự án React Native của bạn, bạn có thể làm theo các bước sau. `@expo/vector-icons` là một phần của Expo SDK, cung cấp một bộ icon đa dạng và dễ sử dụng. Bạn không cần cài đặt thêm bất kỳ thư viện bên ngoài nào nếu đang sử dụng Expo.
+
+### 1. Cài đặt Expo CLI (nếu chưa cài đặt)
+Nếu bạn chưa cài đặt Expo CLI, bạn có thể cài đặt nó bằng npm hoặc yarn:
+```bash
+npm install -g expo-cli
+```
+hoặc
+```bash
+yarn global add expo-cli
+```
+
+### 2. Khởi tạo dự án Expo mới
+Nếu bạn chưa có dự án Expo, bạn có thể khởi tạo một dự án mới bằng cách:
+```bash
+expo init MyNewProject
+cd MyNewProject
+```
+
+### 3. Sử dụng Expo Vector Icons
+Expo đã tích hợp sẵn `@expo/vector-icons`, bạn không cần phải cài đặt thêm. Bạn có thể sử dụng các biểu tượng như sau:
+
+```javascript
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; // Thay thế bằng bộ icon bạn muốn sử dụng
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Expo Vector Icons Example</Text>
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  text: {
+    fontSize: 20,
+    marginBottom: 10,
+  },
+});
+```
+
+### 4. Chạy dự án
+Bạn có thể chạy dự án của mình bằng cách:
+```bash
+expo start
+```
+
+Điều này sẽ khởi động dự án Expo và mở trình duyệt với Expo Developer Tools. Bạn có thể quét mã QR bằng ứng dụng Expo Go trên điện thoại của mình để xem ứng dụng đang chạy.
+
+### 5. Sử dụng các bộ icon khác
+`@expo/vector-icons` hỗ trợ nhiều bộ icon khác nhau. Dưới đây là một số ví dụ về cách sử dụng các bộ icon khác:
+
+- **FontAwesome**:
+  ```javascript
+  import { FontAwesome } from '@expo/vector-icons';
+  ```
+
+- **MaterialIcons**:
+  ```javascript
+  import { MaterialIcons } from '@expo/vector-icons';
+  ```
+
+- **Ionicons**:
+  ```javascript
+  import { Ionicons } from '@expo/vector-icons';
+  ```
+
+Bạn có thể tham khảo danh sách đầy đủ các bộ icon và tên các icon tại [@expo/vector-icons](https://docs.expo.dev/guides/icons/).
+
+### Hoàn thiện giao diện Todo
+
+```ts
+// App.tsx
 import { StyleSheet, Text, View, Button, FlatList, TextInput, Pressable, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
@@ -116,3 +200,7 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
+```
+
+*Bài tiếp theo [Sử dụng Icon](session_12_icon.md)*

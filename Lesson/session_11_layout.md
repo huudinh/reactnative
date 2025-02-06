@@ -125,4 +125,4 @@ Bạn có thể kết hợp các thành phần `View`, `Flexbox`, `SafeAreaView`
 Nếu bạn cần thêm sự trợ giúp hoặc có câu hỏi cụ thể về cách chia bố cục trong React Native, hãy cho tôi biết nhé!
 
 
-*Bài tiếp theo [Flex Box Basic](session_11_layout.md)*
+*Bài tiếp theo [Sử dụng Icon](session_12_icon.md)*
