@@ -180,4 +180,4 @@ const styles = StyleSheet.create({
 ```
 
 
-*Bài tiếp theo [Feedback với Alert](session_10_Alert.md)*
+*Bài tiếp theo [Flex Box Basic](session_11_layout.md)*
