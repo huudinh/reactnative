@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
 })
 ```
 
-*Bài tiếp theo [Sử dụng Font](session_13_font.md)*
+*Bài tiếp theo [Sử dụng hằng số](session_14_const.md)*

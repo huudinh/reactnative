@@ -1,4 +1,5 @@
 import { StyleSheet, View, Text } from 'react-native';
+import { OPENSANTS_REGULAR } from '../../assets/utils/const';
 
 const DetailScreen = () => {
     return (
@@ -13,6 +14,6 @@ export default DetailScreen;
 const styles = StyleSheet.create({
     review: {
         fontSize: 30,
-        fontFamily: 'OpenSans',
+        fontFamily: OPENSANTS_REGULAR,
     }
 })
