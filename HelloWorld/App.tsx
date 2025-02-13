@@ -27,7 +27,7 @@ const App = () => {
         return null;
     }
 
-    const RootStack = createNativeStackNavigator({
+    const RootStack = createNativeStackNavigator<RootStackParamList>({
         initialRouteName: 'Home',
         screens: {
             Home: {

@@ -1,18 +1,16 @@
-# Giới Thiệu Navigation
+# Moving Between Screens
+### Khai báo type
 
-### Cài đặt React navigation
-
-```
-npm install @react-navigation/native @react-navigation/native-stack
-```
-
-Nếu bạn đang sử dụng với expo thì cài thêm thư viện
-
-```
-npx expo install react-native-screens react-native-safe-area-context
+```ts
+// type/route.d.ts
+type RootStackParamList = {
+    Home: undefined;
+    Detail: undefined; // Nếu màn hình chi tiết nhận tham số, bạn có thể định nghĩa kiểu tại đây
+    About: undefined;
+}
 ```
 
-### Sửa trang App.tsx
+### Sử dụng type
 
 ```ts
 // App.tsx
@@ -44,8 +42,7 @@ const App = () => {
     if (!loaded && !error) {
         return null;
     }
-
-    const RootStack = createNativeStackNavigator({
+    const RootStack = createNativeStackNavigator<RootStackParamList>({
         initialRouteName: 'Home',
         screens: {
             Home: {
@@ -58,35 +55,63 @@ const App = () => {
             About: AboutScreen,
         },
     });
-
     const Navigation = createStaticNavigation(RootStack);
-
     return <Navigation />;
-
-    
 }
 
 export default App;
 ```
 
-### Sửa component Home
+### Chuyển đến trang Detail từ màn hình Home
 
 ```ts
-// components/review/Home.tsx
 import { Button, View, Text } from 'react-native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+    const navigation:NavigationProp<RootStackParamList> = useNavigation();
+
     return (
         <View>
             <Text>Home Screen</Text>
             <Button title='View Detail' 
-                onPress={() => { alert('Detail') }}
+                onPress={() => navigation.navigate('Detail')}
             />
         </View>
     )
 }
 
 export default HomeScreen;
+```
+
+### Chuyển đến trang About từ màn hình Detail
+
+```ts
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { OPENSANTS_REGULAR } from '../../assets/utils/const';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+
+const DetailScreen = () => {
+    const navigation:NavigationProp<RootStackParamList> = useNavigation();
+
+    return (
+        <View>
+            <Text style={ styles.review }>Detail Screen</Text>
+            <Button title='Go About' 
+                onPress={() => navigation.navigate('About')}
+            />
+        </View>
+    )
+}
+
+export default DetailScreen;
+
+const styles = StyleSheet.create({
+    review: {
+        fontSize: 30,
+        fontFamily: OPENSANTS_REGULAR,
+    }
+})
 ```
 
 *Bài tiếp theo [Moving Between Screens](session_16_moving.md)*
