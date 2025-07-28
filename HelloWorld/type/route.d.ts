@@ -1,5 +1,5 @@
 type RootStackParamList = {
     Home: undefined;
-    Detail: undefined; // Nếu màn hình chi tiết nhận tham số, bạn có thể định nghĩa kiểu tại đây
+    Detail: {id: number; title: string; star: number} | undefined;
     About: undefined;
 }

@@ -65,4 +65,33 @@
    eas build -p android --profile preview
    ```
 
+### Ghi chú
+
+Để chạy ứng dụng Native ta cần chuẩn bị
+
+
+1. Đăng ký tài khoản expo https://expo.dev
+
+2. Cài đặt Android Studio https://developer.android.com/
+
+Việc cài đặt chủ yếu sử dụng để tạo máy ảo
+
+3. Lỗi khi chạy máy ảo
+
+```
+Failed to resolve the Android SDK path. Default install location not found: C:\Users\xxx_ten_user\AppData\Local\Android\Sdk. Use ANDROID_HOME to set the Android SDK location.
+```
+
+Xóa các thư mục sau:
+
+```
+C:\Users\<User>\.android
+C:\Users\<User>\.gradle
+C:\Users\<User>\AppData\Roaming\Google\AndroidStudio*
+C:\Users\<User>\AppData\Local\Google\AndroidStudio*
+```
+
+Cẩn thận: sẽ mất project history, config, v.v...
+
+
 *Bài tiếp theo [View, Text & Styles](session_03_view.md)*
