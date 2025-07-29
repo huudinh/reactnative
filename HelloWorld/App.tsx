@@ -33,10 +33,15 @@ const App = () => {
             Home: {
                 screen: HomeScreen,
                 options: {
-                    title: 'Overview',
+                    title: 'Trang chủ',
                 },
             },
-            Detail: DetailScreen,
+            Detail: {
+                screen: DetailScreen,
+                options: {
+                    title: 'Chi tiết',
+                },
+            },
             About: AboutScreen,
         },
     });

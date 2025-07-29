@@ -1,4 +1,4 @@
-import { Button, View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     reviewItem: {
         padding: 15,
         backgroundColor: "#ccc",
-        marginBottom: 15,
+        margin: 15,
 
     }
 })
@@ -45,9 +45,6 @@ const HomeScreen = () => {
                     }}
                 />
             </View>
-            <Button title='View Detail' 
-                onPress={() => navigation.navigate('Detail')}
-            />
         </View>
     )
 }

@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
 })
 ```
 
-*Bài tiếp theo [Moving Between Screens](session_16_moving.md)*
+*Bài tiếp theo [Routes](session_17_routes.md)*
