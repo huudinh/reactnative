@@ -1,6 +1,13 @@
 import { StyleSheet, View, Text } from 'react-native';
 import { globalStyles } from '../../assets/utils/const';
 
+const styles = StyleSheet.create({
+    about: {
+        fontSize: 30,
+        padding: 15
+    }
+})
+
 const AboutScreen = () => {
     return (
         <View>
@@ -11,8 +18,3 @@ const AboutScreen = () => {
 
 export default AboutScreen;
 
-const styles = StyleSheet.create({
-    about: {
-        fontSize: 30,
-    }
-})

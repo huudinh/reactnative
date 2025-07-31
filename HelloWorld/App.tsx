@@ -1,14 +1,10 @@
-import HomeScreen from './components/review/Home';
-import DetailScreen from './components/review/Detail';
-import AboutScreen from './components/review/About';
-
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import {useEffect} from 'react';
 import { OPENSANTS_REGULAR } from './assets/utils/const';
-
-import { createStaticNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppNavigation from './components/navigation/app.navigation';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -26,31 +22,14 @@ const App = () => {
     if (!loaded && !error) {
         return null;
     }
-
-    const RootStack = createNativeStackNavigator<RootStackParamList>({
-        initialRouteName: 'Home',
-        screens: {
-            Home: {
-                screen: HomeScreen,
-                options: {
-                    title: 'Trang chủ',
-                },
-            },
-            Detail: {
-                screen: DetailScreen,
-                options: {
-                    title: 'Chi tiết',
-                },
-            },
-            About: AboutScreen,
-        },
-    });
-
-    const Navigation = createStaticNavigation(RootStack);
-
-    return <Navigation />;
-
     
+    return (
+        <SafeAreaView style={{ flex: 1 }}>
+            <NavigationContainer>
+                <AppNavigation />
+            </NavigationContainer>
+        </SafeAreaView>
+    );
 }
 
 export default App;
