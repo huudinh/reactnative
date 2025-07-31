@@ -1,6 +1,8 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, ImageBackground } from 'react-native';
 import { OPENSANTS_REGULAR } from '../../assets/utils/const';
-import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import {  RouteProp, useRoute } from '@react-navigation/native';
+import starIcon from '../../assets/images/star.png';
+import background from '../../assets/images/bg.webp';
 
 const styles = StyleSheet.create({
     review: {
@@ -10,22 +12,47 @@ const styles = StyleSheet.create({
     reviewText: {
         fontSize: 25,
         fontFamily: OPENSANTS_REGULAR,
+        padding: 10,
     }
 })
 
 const DetailScreen = () => {
-    const navigation:NavigationProp<RootStackParamList> = useNavigation();
     const route: RouteProp<RootStackParamList, 'Detail'> = useRoute();
 
     return (
-        <View>
+        <ImageBackground
+            source={background}
+        >
             <Text style={ styles.reviewText }>Id: {route.params?.id}</Text>
             <Text style={ styles.reviewText }>Tiêu đề: {route.params?.title}</Text>
-            <Text style={ styles.reviewText }>Ratting: {route.params?.star}</Text>
-            <Button title='Go Home' 
-                onPress={() => navigation.navigate('Home')}
-            />
-        </View>
+            <Text style={ styles.reviewText }>
+                Ratting: {route.params?.star}
+                 
+            </Text>
+            <View style={{ flexDirection: 'row', gap: 10, marginHorizontal: 10}}>
+                <Image 
+                    source={starIcon}
+                    style={{ width: 30, height: 29 }}
+                />
+                <Image 
+                    source={starIcon}
+                    style={{ width: 30, height: 29 }}
+                />
+                <Image 
+                    source={starIcon}
+                    style={{ width: 30, height: 29 }}
+                />
+                <Image 
+                    source={starIcon}
+                    style={{ width: 30, height: 29 }}
+                />
+                <Image 
+                    source={starIcon}
+                    style={{ width: 30, height: 29 }}
+                />
+                
+            </View>
+        </ImageBackground>
     )
 }
 

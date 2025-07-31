@@ -1,6 +1,8 @@
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import CreateModal from './CreateModal';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 interface IReview{
     id: number;
@@ -24,9 +26,17 @@ const HomeScreen = () => {
         {id: 2, title: 'Javascript', star: 5},
     ]);
 
+    const [modalVisible, setModalVisible] = useState(false);
+
     return (
         <View>
             <Text style={{ fontSize:30, paddingLeft:10 }} >Review list</Text>
+            <View style={{ alignItems: 'center'}}>
+                <AntDesign 
+                    name="plussquareo" size={30} color="orange" 
+                    onPress={() => setModalVisible(true)}
+                />
+            </View>
             <View>
                 <FlatList 
                     data={reviews}
@@ -44,6 +54,12 @@ const HomeScreen = () => {
                     }}
                 />
             </View>
+
+            <CreateModal
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible}
+            />
+
         </View>
     )
 }
