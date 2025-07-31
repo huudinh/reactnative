@@ -246,4 +246,4 @@ const HomeScreen = () => {
 export default HomeScreen;
 ```
 
-*Bài tiếp theo [Modal](session_20_update.md)*
+*Bài tiếp theo [Update Modal](session_20_update.md)*
