@@ -1,7 +1,7 @@
 import { Text, View, Modal, StyleSheet, Button, Alert } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { TextInput } from "react-native-gesture-handler";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const styles = StyleSheet.create({
     container: {
@@ -38,36 +38,29 @@ const styles = StyleSheet.create({
 interface IProps {
     modalVisible: boolean;
     setModalVisible: (visible: boolean) => void;
-    addNew: any;
+    updateReview: any;
+    currentReview: { id: number; title: string; star: number } | null;
 }
 
-const CreateModal = (props: IProps) => {
-    const { modalVisible, setModalVisible, addNew } = props;
-    const [title, setTitle] = useState("");
-    const [star, setStar] = useState("");
+const UpdateModal = (props: IProps) => {
+    const { modalVisible, setModalVisible, updateReview, currentReview } = props;
+    const [title, setTitle] = useState(currentReview?.title || "");
+    const [star, setStar] = useState(currentReview?.star?.toString() || "");
 
-    function randomId(min: number, max: number){
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    // Cập nhật lại state khi currentReview thay đổi
+    useEffect(() => {
+        setTitle(currentReview?.title || "");
+        setStar(currentReview?.star?.toString() || "");
+    }, [currentReview]);
 
     const handlerSubmit = () => {
-        if(!title){
-            Alert.alert("Thông tin không hợp lệ", "Nội dung không được để trống");
-            return;
-        }
-        if(!star){
-            Alert.alert("Thông tin không hợp lệ", "Rating không được để trống");
-            return;
-        }
-        addNew({
-            id: randomId(1, 1000),
+        updateReview({
+            id: currentReview?.id || 0,
             title,
             star
         });
 
         setModalVisible(false);
-        setTitle("");
-        setStar("");
     }
 
     return (
@@ -79,13 +72,11 @@ const CreateModal = (props: IProps) => {
             >
                 <View style={styles.container}>
                     <View style={styles.header}>
-                        <Text style={{ fontSize: 25}}>Create a review</Text>
+                        <Text style={{ fontSize: 25}}>Update review</Text>
                         <AntDesign 
                             name="close" size={24} color="black" 
                             onPress={() => {
                                 setModalVisible(false);
-                                setTitle("");
-                                setStar("");
                             }}
                         />
                     </View>
@@ -120,4 +111,4 @@ const CreateModal = (props: IProps) => {
     )
 }
 
-export default CreateModal;
+export default UpdateModal;
