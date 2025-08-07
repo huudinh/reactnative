@@ -104,8 +104,6 @@ const styles = StyleSheet.create({
 
 Trong React Native, View là thành phần cơ bản nhất dùng để xây dựng giao diện người dùng. Nó tương tự như thẻ <div> trong HTML và đóng vai trò như một container để chứa các thành phần khác như Text, Image, hoặc thậm chí là các View lồng nhau
 
-### Câu 2: Đặc điểm chính của View?
-
 Container: Dùng để nhóm các thành phần giao diện lại với nhau.
 
 Hỗ trợ Flexbox: Cho phép bố trí layout linh hoạt.
@@ -116,11 +114,9 @@ Xử lý sự kiện: Có thể gán các sự kiện như chạm (onTouchStart,
 
 Tương thích đa nền tảng: Tự động ánh xạ sang UIView trên iOS hoặc android.view trên Android
 
-### Câu 3: Text trong React Native là gì?
+### Câu 2: Text trong React Native là gì?
 
 Trong React Native, Text là thành phần cơ bản dùng để hiển thị văn bản trong giao diện người dùng. Nó tương tự như thẻ <p> hoặc <span> trong HTML, nhưng được tối ưu hóa cho ứng dụng di động trên cả iOS và Android.
-
-### Câu 4: Đặc điểm chính của Text?
 
 Hiển thị văn bản: Dùng để render chữ, số, ký tự,...
 
@@ -130,11 +126,9 @@ Tùy chỉnh kiểu dáng: Có thể áp dụng các thuộc tính như màu s�
 
 Xử lý sự kiện: Có thể gán sự kiện như onPress để xử lý khi người dùng nhấn vào văn bản.
 
-### Câu 5: Cách style trong React Native
+### Câu 3: Cách style trong React Native
 
 Trong React Native, bạn sử dụng JavaScript để định nghĩa style, thay vì CSS như trên web. Các style được viết dưới dạng đối tượng JavaScript với cú pháp camelCase (ví dụ: backgroundColor thay vì background-color).
-
-### Câu 6: Có mấy cách Style?
 
 **1. Inline Style – Viết trực tiếp trong thuộc tính**
 
@@ -174,11 +168,9 @@ Tối ưu hiệu năng
 
 Dễ quản lý và tái sử dụng
 
-### Câu 7: TouchableOpacity trong React Native là gì?
+### Câu 4: TouchableOpacity trong React Native là gì?
 
 TouchableOpacity là một component tương tác trong React Native, dùng để xử lý sự kiện chạm (touch). Khi người dùng nhấn vào, nó sẽ giảm độ mờ (opacity) của phần tử con bên trong, tạo hiệu ứng phản hồi trực quan.
-
-### Câu 8: Các tính năng chính TouchableOpacity?
 
 Hiệu ứng nhấn: Làm mờ phần tử khi người dùng chạm vào
 
@@ -186,4 +178,4 @@ Xử lý sự kiện: Dễ dàng gán hàm onPress để thực hiện hành đ�
 
 Dễ sử dụng: Có thể bao quanh bất kỳ thành phần nào như Text, Image, View,..
 
-*Bài tiếp theo [View, Text & Styles](session_03_view.md)*
+*Bài tiếp theo [Thêm mới Todo](session_03_addTodo.md)*

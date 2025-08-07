@@ -1,5 +1,7 @@
 # Tạo ứng dụng TodoList
 
+![Create-HTML-1](images/todo.png) 
+
 ### Chuẩn bị
 
 1. Đăng ký tài khoản expo https://expo.dev
@@ -71,4 +73,4 @@
    eas build -p android --profile preview
    ```
 
-*Bài tiếp theo [View, Text & Styles](session_02_todo.md)*
+*Bài tiếp theo [Tạo components Todo](session_02_todo.md)*
