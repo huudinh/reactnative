@@ -1,6 +1,6 @@
 # Tạo ứng dụng Hello World
 
-### Đăng ký tài khoản expo
+### Chuẩn bị
 
 1. Đăng ký tài khoản expo https://expo.dev
 

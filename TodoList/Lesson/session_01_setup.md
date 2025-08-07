@@ -1,6 +1,6 @@
 # Tạo ứng dụng TodoList
 
-### Đăng ký tài khoản expo
+### Chuẩn bị
 
 1. Đăng ký tài khoản expo https://expo.dev
 
@@ -8,7 +8,7 @@
 
 3. **Cài đặt Node.js và npm**: Cài đặt Node.js và npm (Node Package Manager). Bạn có thể tải chúng từ [trang web chính thức của Node.js](https://nodejs.org/).
 
-### Cài đặt TodoList
+### Tạo dự án TodoList
 
 1. **Tạo dự án mới**: Mở terminal và chạy lệnh sau để tạo một dự án Expo mới với TypeScript:
    ```bash
