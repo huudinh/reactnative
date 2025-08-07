@@ -1,5 +1,7 @@
 # React Native
 
+![Create-HTML-1](images/todo.png) 
+
 ### React Native là gì
 React Native là một framework phát triển ứng dụng di động mã nguồn mở do Facebook phát triển. Nó cho phép bạn xây dựng các ứng dụng di động cho cả iOS và Android bằng cách sử dụng JavaScript và React. Thay vì viết mã riêng biệt cho từng nền tảng, bạn có thể sử dụng React Native để viết một lần và chạy trên cả hai nền tảng.
 
