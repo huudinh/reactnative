@@ -71,4 +71,4 @@
    eas build -p android --profile preview
    ```
 
-*Bài tiếp theo [View, Text & Styles](session_03_view.md)*
+*Bài tiếp theo [View, Text & Styles](session_02_todo.md)*
