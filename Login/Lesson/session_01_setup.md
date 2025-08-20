@@ -73,4 +73,4 @@
    eas build -p android --profile preview
    ```
 
-*Bài tiếp theo [Tạo components Todo](session_02_login.md)*
+*Bài tiếp theo [Tạo ứng dụng Login](session_02_login.md)*

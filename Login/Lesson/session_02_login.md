@@ -1,3 +1,23 @@
+# Tạo ứng dụng Login
+
+<!-- ![Create-HTML-1](images/login.png)  -->
+
+### Mục tiêu
+
+1. Học cách dàn Layout cơ bản
+
+2. Style giao diện Login
+
+3. Thêm Icon vào React Native
+
+4. Tạo màu nền cho nút Login 
+
+5. Áp dụng State để xem mật khẩu đã chính xác chưa
+
+
+### Sửa file App.js
+
+```jsx
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -146,3 +166,34 @@ const styles = StyleSheet.create({
     color: '#777',
   },
 });
+```
+
+## Các Câu Hỏi Thường Gặp Khi Phỏng Vấn (FAQ)
+
+### Câu 1: Cách giàn Layout cơ bản trong React Native?
+
+Trong React Native, cách giàn layout cơ bản nhất là sử dụng Flexbox, một hệ thống bố cục mạnh mẽ giúp bạn kiểm soát cách các thành phần hiển thị trên màn hình — từ căn giữa, chia cột, chia hàng, đến co giãn theo kích thước màn hình.
+
+flexDirection mặc định là column, khác với CSS web. Bạn có thể lồng nhiều View để tạo layout phức tạp hơn. Dùng flex: 1 để phần tử chiếm toàn bộ không gian khả dụng.
+
+### Câu 2: SecureTextEntry trong reactnative là gì
+
+Trong React Native, thuộc tính secureTextEntry được sử dụng trong thành phần <TextInput> để ẩn nội dung người dùng nhập vào — thường dùng cho các trường mật khẩu hoặc thông tin nhạy cảm.
+
+Khi `secureTextEntry={true}`, văn bản nhập vào sẽ được hiển thị dưới dạng dấu chấm hoặc dấu sao (tùy hệ điều hành).
+
+### Câu 3: Thêm Icon vào React Native như thế nào
+
+Sử dụng Expo Vector Icons https://icons.expo.fyi/Index
+
+Expo đã tích hợp sẵn @expo/vector-icons, bạn không cần phải cài đặt thêm.
+
+### Câu 4: Tao màu nền gradian trong React Native như thế nào
+
+Để tạo màu nền gradient trong React Native, bạn sẽ cần dùng thư viện hỗ trợ vì React Native không hỗ trợ gradient trực tiếp. Thư viện phổ biến nhất là react-native-linear-gradient hoặc nếu bạn dùng Expo thì có thể dùng expo-linear-gradient.
+
+```
+npx expo install expo-linear-gradient
+```
+
+*Bài tiếp theo [Validate Login](session_03_validate.md)*
