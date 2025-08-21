@@ -12,7 +12,7 @@
 
 ### Tạo dự án Login
 
-1. **Tạo dự án mới**: Mở terminal và chạy lệnh sau để tạo một dự án Expo mới với TypeScript:
+1. **Tạo dự án mới**: Mở terminal và chạy lệnh sau để tạo một dự án Expo mới:
    ```bash
    npx create-expo-app@latest Login --template
    ```
