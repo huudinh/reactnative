@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "fullName": "Quoc Viet",
+    "username": "Viet",
+    "password": "1234",
+    "age": 28
+  },
+  {
+    "id": 2,
+    "fullName": "Dinh Trieu",
+    "username": "dinh",
+    "password": "1234",
+    "age": 28
+  }
+]
