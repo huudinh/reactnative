@@ -6,13 +6,13 @@
 
 1. Khởi tạo ứng dụng login-api
 
-Tạo ứng dụng nextjs `npx create-next-app@latest`
-
-Chạy ứng dụng `npm run dev`
-
 2. Cài đặt Backend API http://localhost:3000/api/users
 
 3. Khai báo Type User
+
+4. Làm data mẫu
+
+5. Xây dựng phương thức CRUD cho API
 
 ### Tạo file src/type/backend.d.ts
 
@@ -127,11 +127,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 ## Các Câu Hỏi Thường Gặp Khi Phỏng Vấn (FAQ)
 
-### Câu 1: Có nên sử dụng nextjs làm backend?
+### Câu 1: Làm thế nào để khởi tạo ứng dụng NextJS
+
+Tạo ứng dụng nextjs `npx create-next-app@latest`
+
+Chạy ứng dụng `npm run dev`
+
+### Câu 2: Có nên sử dụng nextjs làm backend?
 
 Sử dụng Next.js làm backend là một lựa chọn ngày càng phổ biến — đặc biệt nếu bạn đã dùng React ở frontend. Nhưng có nên hay không thì còn tùy vào mục tiêu dự án của bạn.
 
-### Câu 2: Trường hợp nào không nên sử dụng nextjs làm backend?
+### Câu 3: Trường hợp nào không nên sử dụng nextjs làm backend?
 
 Không phù hợp cho các hệ thống backend phức tạp
 
@@ -139,4 +145,4 @@ Khó mở rộng nếu backend phát triển mạnh
 
 Không có middleware mạnh như Express/NestJS
 
-*Bài tiếp theo [Request API bằng Axios](session_04_axios.md)*
+*Bài tiếp theo [Request API bằng Axios](session_05_axios.md)*
