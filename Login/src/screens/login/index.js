@@ -1,8 +1,9 @@
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SysModal from '../../components/modal';
+import axios from 'axios';
 
 const LoginScreen = () => {
     // State để quản lý modal
@@ -21,20 +22,39 @@ const LoginScreen = () => {
     const handleUsernameChange = (text) => setUsername(text);
     const handlePasswordChange = (text) => setPassword(text);
 
+    // Đọc dữ liệu từ API
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+      axios.get('http://10.196.61.148:3000/api/users')
+        .then(response => {
+          setData(response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    }, []);
+
     // Handle người dung khi click vào login
     const handleLogin = () => {
         // Validate
         if(!username || !password) {
-            // Alert.alert('Xin hãy nhập đầy đủ thông tin');
             setModalVisible(true);
             setMessage('Xin hãy nhập đầy đủ thông tin');
             return;
         }
 
-        console.log('login button pressed', {
-            username, 
-            password
-        });
+        // Kiểm tra xem user có tồn tại trong data không
+        const user = data.find(
+          u => u.username === username && u.password === password
+        );
+        setModalVisible(true);
+
+        if (user) {
+          setMessage(`Chào ${user.fullName}, bạn đã đăng nhập thành công!`);
+        } else {
+          setMessage('Sai tên đăng nhập hoặc mật khẩu.');
+        }
     }
 
     return (
