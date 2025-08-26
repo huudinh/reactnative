@@ -4,8 +4,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
 import SysModal from '../../components/modal';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
+    const navigation = useNavigation();
+
     // State để quản lý modal
     const [modalVisible, setModalVisible] = useState(false);
     const [message, setMessage] = useState('');
@@ -44,15 +48,27 @@ const LoginScreen = () => {
             return;
         }
 
+        // Kiểm tra xem data có dữ liệu không
+        if (!data || data.length === 0) {
+          setModalVisible(true);
+          setMessage('Lỗi kết nối Database');
+          return;
+        }
+
         // Kiểm tra xem user có tồn tại trong data không
         const user = data.find(
           u => u.username === username && u.password === password
         );
-        setModalVisible(true);
 
         if (user) {
-          setMessage(`Chào ${user.fullName}, bạn đã đăng nhập thành công!`);
+          // Lưu thông tin User vào AsyncStorage
+          AsyncStorage.setItem('UserInfo', JSON.stringify(user));
+
+          // Chuyển hướng sang trang chủ
+          navigation.navigate('Home');
+          
         } else {
+          setModalVisible(true);
           setMessage('Sai tên đăng nhập hoặc mật khẩu.');
         }
     }
