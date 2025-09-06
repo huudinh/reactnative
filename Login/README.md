@@ -6,7 +6,9 @@
 npm start
 ```
 
-Yêu cầu cần chạy máy ảo Android Studio và đăng ký tài khoản Expo
+Chọn a để chạy máy ảo Android
+
+>Yêu cầu cần cài đặt Android Studio và đăng ký tài khoản Expo
 
 ### Tài liệu
 
